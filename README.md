@@ -1,71 +1,114 @@
-# Getting Started with Create React App
+# MERN Ecommerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+An ecommerce store built with MERN stack, and utilizes third party API's. This ecommerce store enable three main different flows or implementations:
 
-In the project directory, you can run:
+1. Buyers browse the store categories, products and brands
+2. Sellers or Merchants manage their own brand component
+3. Admins manage and control the entire store components 
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* features:
+  * Node provides the backend environment for this application
+  * Express middleware is used to handle requests, routes
+  * Mongoose schemas to model the application data
+  * React for displaying UI components
+  * Redux to manage application's state
+  * Redux Thunk middleware to handle asynchronous redux actions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Quickstart Guide
 
-### `npm test`
+To run this project locally you can use docker compose provided in the repository. Here is a guide on how to run this project locally using docker compose.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clone the repository
+```
+$ git clone https://github.com/mohamedsamara/mern-ecommerce.git
+```
 
-### `npm run build`
+Edit the dockercompose.yml file and update the the values for MONGO_URI and JWT_SECRET
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Then simply start the docker compose:
+```
+$ docker compose -f dockercompose.yml up
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Database Seed
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* The seed command will create an admin user in the database
+* The email and password are passed with the command as arguments
+* Like below command, replace brackets with email and password. 
+* For more information, see code [here](server/utils/seed.js)
 
-### `npm run eject`
+```
+npm run seed:db [email-***@****.com] [password-******] // This is just an example.
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Demo
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This application is deployed on Vercel Please check it out :smile: [here](https://mern-store-gold.vercel.app).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+See admin dashboard [demo](https://mernstore-bucket.s3.us-east-2.amazonaws.com/admin.mp4)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Install
 
-## Learn More
+Some basic Git commands are:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+$ git clone https://github.com/mohamedsamara/mern-ecommerce.git
+$ cd project
+$ npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Start development
 
-### Code Splitting
+```
+$ npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Simple build for production
 
-### Analyzing the Bundle Size
+```
+$ npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Run build for production
 
-### Making a Progressive Web App
+```
+$ npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Languages & tools
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- [Node](https://nodejs.org/en/)
 
-### Deployment
+- [Express](https://expressjs.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- [Mongoose](https://mongoosejs.com/)
 
-### `npm run build` fails to minify
+- [React](https://reactjs.org/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# ZippyKelvin-s
+- [Webpack](https://webpack.js.org/)
+
+
+### Code Formatter
+
+- Add a `.vscode` directory
+- Create a file `settings.json` inside `.vscode`
+- Install Prettier - Code formatter in VSCode
+- Add the following snippet:  
+
+```json
+
+    {
+      "editor.formatOnSave": true,
+      "prettier.singleQuote": true,
+      "prettier.arrowParens": "avoid",
+      "prettier.jsxSingleQuote": true,
+      "prettier.trailingComma": "none",
+      "javascript.preferences.quoteStyle": "single",
+    }
+
+```
+
